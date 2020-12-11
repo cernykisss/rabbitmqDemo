@@ -1,11 +1,8 @@
-package workqueue;
+package workqueue_round;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import util.ConnectionUtil;
-
-import java.io.IOException;
-import java.util.concurrent.TimeoutException;
 
 public class Producer {
 

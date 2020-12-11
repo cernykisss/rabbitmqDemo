@@ -1,4 +1,4 @@
-package workqueue;
+package workqueue_round;
 
 import com.rabbitmq.client.*;
 import util.ConnectionUtil;
@@ -6,7 +6,7 @@ import util.ConnectionUtil;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
-public class Consumer2 {
+public class Consumer1 {
 
     private static final String QUEUE_NAME = "workQueue";
 
@@ -22,15 +22,15 @@ public class Consumer2 {
                                        AMQP.BasicProperties properties, byte[] body) throws IOException {
 
                 String msg = new String(body, "utf-8");
-                System.out.println("[2] " + msg);
+                System.out.println("[1] " + msg);
 
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(2000);
                 } catch (InterruptedException e) {
                 }
             }
         };
-        System.out.println("Consumer2 is done");
+        System.out.println("Consumer1 is done");
         boolean autoAck = true;
         channel.basicConsume(QUEUE_NAME, autoAck, consumer);
 
