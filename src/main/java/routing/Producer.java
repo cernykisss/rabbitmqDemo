@@ -7,6 +7,7 @@ import util.ConnectionUtil;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
+//路由模式exchange类型为direct
 public class Producer {
 
     private static final String EXCHANGE_NAME = "test_exchange_direct";
